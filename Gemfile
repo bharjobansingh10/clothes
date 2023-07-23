@@ -46,6 +46,8 @@ gem "bootsnap", require: false
 gem 'faker'
 gem 'carrierwave'
 gem 'kaminari'
+gem "rolify"
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
