@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :customers, controllers: { sessions: 'sessions' }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: 'products#index'
+  resources :products, only: [:index, :show]
+  resources :categories, only: [:show]
+  resource :cart, only: [:show] do
+    put    :add_item
+    delete :remove_item
+  end
 end
