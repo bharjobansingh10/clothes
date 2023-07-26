@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :customers, controllers: { sessions: 'sessions' }
+  devise_for :customers, controllers: { sessions: 'sessions', registrations: 'users/registrations' }
 
   root to: 'products#index'
   resources :products, only: [:index, :show]

@@ -13,7 +13,7 @@ class SessionsController < Devise::SessionsController
       end
     else
       flash[:alert] = "Invalid email or password"
-      render :new
+      # render :new
     end
   end
 end

@@ -23,7 +23,7 @@ class CartsController < ApplicationController
     cart.delete(product_id) if item["quantity"] < 1
     update_cart cart
 
-    redirect_to :back
+    redirect_to cart_path
   end
 
 end

@@ -6,7 +6,7 @@
 
   <tr>
     <td>
-      <%= image_tag  "shirt.png" %>
+      <%= image_tag product&.image&.thumb.url, alt: product.name %>
     </td>
     <td>
       <h4><%= product.name %></h4>
