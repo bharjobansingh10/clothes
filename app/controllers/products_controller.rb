@@ -10,4 +10,20 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
   end
 
+  def featured
+    @featured_products =  Product.where(is_featured: true).page(params[:page])
+  end
+
+  def recent
+    @recent_products = Product.where("products.updated_at >= ?", 5.days.ago).page(params[:page])
+  end
+
+  def about_us
+    @about = About&.last
+  end
+
+  def contact_us
+    @contact = ContactU&.last
+  end
+
 end

@@ -1,5 +1,6 @@
 require 'faker'
 puts "Data Seeding................"
+AdminUser.create(email: 'admin@trendz.com', password: '12345678', password_confirmation: '12345678')
 
 puts "Finding or Creating Categories ............"
 cat1 = Category.find_or_create_by! name: 'Dresses'
@@ -95,3 +96,4 @@ cat4.products.create!({
                         price: 1000.65
                       })
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

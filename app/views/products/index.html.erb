@@ -83,6 +83,7 @@
       <%= render "products", product: product %>
     <% end %>
     <%= paginate @featured_products %>
+    <%= link_to "All Featured Products", featured_path %><br />
   </div>
   <header class="page-header">
     <h3>Recent Products</h3>
@@ -92,6 +93,7 @@
       <%= render "products", product: product %>
     <% end %>
     <%= paginate @recent_products %>
+    <%= link_to "All Recent Products", recent_path %><br />
   </div>
 
 </section>
