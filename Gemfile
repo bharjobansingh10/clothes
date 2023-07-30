@@ -47,7 +47,8 @@ gem 'faker'
 gem 'carrierwave'
 gem 'kaminari'
 gem "rolify"
-
+gem "activeadmin"
+gem 'sassc-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
