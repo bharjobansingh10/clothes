@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <h4><%= category.name %></h4>
+  </td>
+  <td>
+    <h5><%= category.description %></h5>
+  </td>
+  <td>
+    <%= link_to "Delete", [:admin, category], class: 'btn btn-sm btn-danger', data: { "turbo-method": :delete, confirm: "Are you sure?" }%>
+  </td>
+</tr>

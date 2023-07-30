@@ -7,7 +7,7 @@ class SessionsController < Devise::SessionsController
       sign_in(:customer, user)
       session[:user_id] = user.id
       if user.has_role? :admin
-        redirect_to admin_products_path
+        redirect_to new_admin_user_session_path
       else
         redirect_to products_path
       end

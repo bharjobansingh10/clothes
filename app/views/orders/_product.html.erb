@@ -1,0 +1,20 @@
+<% @order.order_items.each do |i| %>
+
+  <tr>
+    <td>
+      <%= image_tag i.product.image.url %>
+    </td>
+    <td>
+      <h4><%= i.product.name %></h4>
+      <br>
+      <p><%= i.product.description %></p>
+    </td>
+    <td>
+      <%= i.quantity %>
+    </td>
+    <td>
+      <%= i.total_price %>
+    </td>
+  </tr>
+
+<% end %>

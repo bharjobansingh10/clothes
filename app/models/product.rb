@@ -4,7 +4,7 @@ class Product < ApplicationRecord
     has_many :order_items
     def self.search(search)
         if search
-            self.where("name ilike ?", "%#{search}%")
+            self.joins(:category).where("products.name ilike ? or categories.name ilike ? ", "%#{search}%","%#{search}%")
         else
             self.all
         end
