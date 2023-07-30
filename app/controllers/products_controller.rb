@@ -18,4 +18,12 @@ class ProductsController < ApplicationController
     @recent_products = Product.where("products.updated_at >= ?", 5.days.ago).page(params[:page])
   end
 
+  def about_us
+    @about = About&.last
+  end
+
+  def contact_us
+    @contact = ContactU&.last
+  end
+
 end

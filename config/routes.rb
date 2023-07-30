@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:create, :show]
   get 'featured', to: 'products#featured', as: "featured"
   get 'recent', to: 'products#recent', as: "recent"
+  get '/about_us',  to: 'products#about_us', as: "about"
+  get '/contact_us',  to: 'products#contact_us', as: "contact_us"
   # namespace :admin do
   #   root to: 'dashboard#show'
   #   resources :products, :categories, except: [:edit, :update, :show]
