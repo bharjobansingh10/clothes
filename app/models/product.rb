@@ -12,6 +12,8 @@ class Product < ApplicationRecord
         end
     end
 
+    
+
     def self.ransackable_attributes(auth_object = nil)
         %w[category_id created_at description id image is_featured name price updated_at]
     end
