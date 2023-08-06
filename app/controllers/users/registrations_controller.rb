@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update]
 
   def new
     super
@@ -13,5 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:address])
+  end
 end

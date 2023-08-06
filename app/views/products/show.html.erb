@@ -9,7 +9,11 @@
     <div class="row">
 
       <div class="col-sm-4">
-        <%= image_tag "shirt.png", class: 'main-img' %>
+        <% if @product&.image&.thumb&.url&.present? %>
+          <%= image_tag @product&.image&.thumb.url, alt: @product.name %>
+        <% else %>
+          <%= image_tag "shirt.png", alt: @product.name %>
+        <% end %>
       </div>
 
       <div class="col-sm-8">

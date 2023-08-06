@@ -50,6 +50,7 @@ gem "rolify"
 gem "activeadmin"
 gem 'sassc-rails'
 gem 'stripe'
+gem "breadcrumbs_on_rails"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
