@@ -6,7 +6,11 @@
 
   <tr>
     <td>
-      <%= image_tag product&.image&.thumb.url, alt: product.name %>
+      <% if product&.image&.thumb&.url&.present? %>
+        <%= image_tag product&.image&.thumb.url, alt: product.name %>
+      <% else %>
+        <%= image_tag "shirt.png", alt: product.name %>
+      <% end %>
     </td>
     <td>
       <h4><%= product.name %></h4>
