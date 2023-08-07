@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def update_cart(new_cart)
     cookies[:cart] = {
       value: JSON.generate(new_cart),
-      expires: 10.days.from_now
+      expires: 2.days.from_now
     }
     cookies[:cart]
   end
