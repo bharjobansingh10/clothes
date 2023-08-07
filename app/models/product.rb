@@ -2,6 +2,9 @@ class Product < ApplicationRecord
     mount_uploader :image, AvatarUploader
     belongs_to :category
     has_many :order_items
+    validates :name, :price, :bio, presence: true
+    validates :name, length: {maximum: 30}
+
     # has_many :orders, through: :order_items
 
     def self.search(search)
