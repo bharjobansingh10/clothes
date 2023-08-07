@@ -51,6 +51,7 @@ gem "activeadmin"
 gem 'sassc-rails'
 gem 'stripe'
 gem "breadcrumbs_on_rails"
+gem "rspec-rails"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
