@@ -26,4 +26,8 @@ class ProductsController < ApplicationController
     @contact = ContactU&.last
   end
 
+  def all_products
+    @all_products =  Product.all.page(params[:page])
+  end
+
 end
