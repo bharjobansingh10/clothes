@@ -52,6 +52,7 @@ gem 'sassc-rails'
 gem 'stripe'
 gem "breadcrumbs_on_rails"
 gem "rspec-rails"
+gem "factory_bot_rails"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
