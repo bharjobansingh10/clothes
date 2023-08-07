@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def all_products
-    @all_products =  Product.all.page(params[:page])
+    @all_products =  Product.all.page(params[:page]).per(10)
   end
 
 end
