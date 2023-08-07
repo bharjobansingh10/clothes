@@ -1,0 +1,14 @@
+docker build . -t rails_docker:1
+docker run -p 3000:3000 rails_docker:1
+docker build . -t rails_docker:2
+docker network create rails_postgres
+docker run --network rails_postgres --name postgres -d -e POSTGRES_PASSWORD=postgres postgres:latest
+docker run --network rails_postgres --name trendz -p 3000:3000 rails_docker:2
+docker exec trendz rails db:create
+
+
+compose commands:
+
+docker-compose up
+docker-compose run rails rails db:create
+docker-compose down

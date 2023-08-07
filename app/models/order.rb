@@ -2,7 +2,7 @@ class Order < ApplicationRecord
     belongs_to :customer
     has_many :order_items, dependent: :destroy
     has_one :payment
-    has_many :products, through: :order_items
+    # has_many :products, through: :order_itemz
 
     enum status: { created: 0, placed: 1, paid: 2, cancel: 3 }
     enum payment_method: { online_payment: 0, cash_on_delivery: 1 }
