@@ -6,8 +6,8 @@ class OrdersController < ApplicationController
 
   def create
     unless current_user
-      flash[:danger] = "You must be logged in to access this."
-      redirect_to new_customer_session_path
+      flash[:danger] = "You must add order information."
+      redirect_to user_info_path
       return
     end
     charge = perform_stripe_charge
@@ -22,6 +22,16 @@ class OrdersController < ApplicationController
 
   rescue Stripe::CardError => e
     redirect_to cart_path, error: e.message
+  end
+
+  def user_info
+    @cart_total =0
+    cart.each do |product_id, details|
+      if product = Product.find_by(id: product_id)
+        quantity = details['quantity'].to_i
+        @cart_total =  @cart_total + (product.price * quantity)
+      end
+    end
   end
 
   private

@@ -76,14 +76,14 @@
     <%= paginate @products %>
   </div>
   <header class="page-header">
-    <h3>Featured Products</h3>
+    <h3>On Sale Products</h3>
   </header>
   <div class="products">
     <% @featured_products.each do |product| %>
       <%= render "products", product: product %>
     <% end %>
     <%= paginate @featured_products %>
-    <%= link_to "All Featured Products", featured_path %><br />
+    <%= link_to "All On Sale Products", featured_path %><br />
   </div>
   <header class="page-header">
     <h3>Recent Products</h3>
