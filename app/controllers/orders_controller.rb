@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   def perform_stripe_charge
     Stripe::Charge.create(
       source:      params[:stripeToken],
-      amount:      cart_total.to_i,
+      amount:      5000,
       description: "Trendz Order",
       currency:    'usd'
     )
