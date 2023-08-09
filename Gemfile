@@ -53,6 +53,8 @@ gem 'stripe'
 gem "breadcrumbs_on_rails"
 gem "rspec-rails"
 gem "factory_bot_rails"
+gem 'rubocop-rails', require: false
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
