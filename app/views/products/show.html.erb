@@ -24,12 +24,12 @@
           <dd><%= @product.description %></dd>
           <dt>Price</dt>
           <dd>$ <%= @product.price %></dd>
+          <%= link_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary pull-right', data: { "turbo-method": :put } do %>
+            <span class="glyphicon glyphicon-shopping-cart shopping-carts"> Add </span>
+          <% end %>
         </dl>
       </div>
     </div>
-    <%= link_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary pull-right', data: { "turbo-method": :put } do %>
-      <span class="glyphicon glyphicon-shopping-cart shopping-carts"> Add </span>
-    <% end %>
 
   </article>
 
