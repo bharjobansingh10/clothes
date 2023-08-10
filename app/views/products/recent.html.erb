@@ -1,0 +1,13 @@
+<section class="products-index">
+
+  <header class="page-header">
+    <h3>Recent Products</h3>
+  </header>
+  <div class="products">
+    <% @recent_products.each do |product| %>
+      <%= render "products", product: product %>
+    <% end %>
+    <%= paginate @recent_products %>
+  </div>
+
+</section>
