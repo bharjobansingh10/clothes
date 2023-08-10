@@ -22,11 +22,11 @@
     </td>
     <td>
       <%= link_to remove_item_cart_path(product_id: product_id), class: 'btn btn-xs btn-danger', data: { "turbo-method": :delete } do %>
-        -
+        Delete
       <% end %>
       <%= quantity %>
       <%= link_to add_item_cart_path(product_id: product_id), class: 'btn btn-xs btn-success', data: { "turbo-method": :put } do %>
-        +
+        Update
       <% end %>
     </td>
     <td>
