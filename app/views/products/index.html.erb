@@ -76,7 +76,17 @@
     <%= paginate @products %>
   </div>
   <header class="page-header">
-    <h3>On Sale Products</h3>
+  <h3>Latest Products</h3>
+</header>
+<div class="products">
+  <% @recent_products.each do |product| %>
+    <%= render "products", product: product %>
+  <% end %>
+  <%= paginate @recent_products %>
+</div>
+
+  <header class="page-header">
+    <h3>Discounted Products</h3>
   </header>
   <div class="products">
     <% @featured_products.each do |product| %>
@@ -84,14 +94,4 @@
     <% end %>
     <%= paginate @featured_products %>
   </div>
-  <header class="page-header">
-    <h3>Recent Products</h3>
-  </header>
-  <div class="products">
-    <% @recent_products.each do |product| %>
-      <%= render "products", product: product %>
-    <% end %>
-    <%= paginate @recent_products %>
-  </div>
-
 </section>

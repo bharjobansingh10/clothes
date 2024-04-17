@@ -1,6 +1,6 @@
 require 'faker'
 puts "Data Seeding................"
-AdminUser.create(email: 'admin@trendz.com', password: '12345678', password_confirmation: '12345678')
+AdminUser.create(email: 'admin@collections.com', password: '12345678', password_confirmation: '12345678')
 
 puts "Finding or Creating Categories ............"
 cat1 = Category.find_or_create_by! name: 'Dresses'

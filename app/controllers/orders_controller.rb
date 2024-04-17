@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      5000,
-      description: "Trendz Order",
+      description: "204 Collections Order",
       currency:    'usd'
     )
   end

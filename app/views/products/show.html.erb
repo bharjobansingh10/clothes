@@ -1,36 +1,38 @@
 <section class="products-show">
 
   <header class="page-header">
-    <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %></h1>
+    <h1 class="text-center mb-4"><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %></h1>
   </header>
 
-  <article class="product-detail">
-
+  <article class="product-detail container">
     <div class="row">
-
-      <div class="col-sm-4">
+      <div class="col-md-6">
         <% if @product&.image&.thumb&.url&.present? %>
-          <%= image_tag @product&.image&.thumb.url, alt: @product.name %>
+          <%= image_tag @product&.image&.thumb.url, alt: @product.name, class: "img-fluid rounded" %>
         <% else %>
-          <%= image_tag "shirt.png", alt: @product.name %>
+          <%= image_tag "shirt.png", alt: @product.name, class: "img-fluid rounded" %>
         <% end %>
       </div>
 
-      <div class="col-sm-8">
-        <dl class="dl-horizontal">
-          <dt>Name</dt>
-          <dd><%= @product.name %></dd>
-          <dt>Description</dt>
-          <dd><%= @product.description %></dd>
-          <dt>Price</dt>
-          <dd>$ <%= @product.price %></dd>
-          <%= link_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary pull-right', data: { "turbo-method": :put } do %>
-            <span class="glyphicon glyphicon-shopping-cart shopping-carts"> Add </span>
-          <% end %>
+      <div class="col-md-6">
+        <dl class="row">
+          <dt class="col-sm-4">Name:</dt>
+          <dd class="col-sm-8"><%= @product.name %></dd>
+
+          <dt class="col-sm-4">Description:</dt>
+          <dd class="col-sm-8"><%= @product.description %></dd>
+
+          <dt class="col-sm-4">Price:</dt>
+          <dd class="col-sm-8">$ <%= @product.price %></dd>
         </dl>
+        
+        <div class="text-center">
+          <%= link_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary', data: { "turbo-method": :put } do %>
+            <span class="glyphicon glyphicon-shopping-cart shopping-carts"> Add to Cart </span>
+          <% end %>
+        </div>
       </div>
     </div>
-
   </article>
 
 </section>
